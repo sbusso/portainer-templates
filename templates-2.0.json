@@ -227,6 +227,37 @@
     },
     {
       "type": 1,
+      "title": "Dokku",
+      "description": "Dokku PaaS",
+      "categories": ["paas"],
+      "platform": "linux",
+      "logo": "https://cdn.jsdelivr.net/gh/dokku/dokku@v0.26.8/docs/assets/dokku.png",
+      "image": "dokku/dokku",
+      "ports": ["80/tcp", "22/tcp", "443/tcp"],
+      "env": [
+        {
+          "name": "DOKKU_HOSTNAME",
+          "label": "Dokku hostname"
+        },
+        {
+          "name": "DOKKU_HOST_ROOT",
+          "label": "Dokku host root",
+          "default": "/var/lib/dokku/home/dokku"
+        }
+      ],
+      "volumes": [
+        {
+          "container": "/mnt/dokku"
+        },
+        {
+          "container": "/var/run/docker.sock",
+          "bind": "/var/run/docker.sock",
+          "readonly": true
+        }
+      ]
+    },
+    {
+      "type": 1,
       "title": "Minio",
       "description": "A distributed object storage server built for cloud applications and devops",
       "categories": ["storage"],
