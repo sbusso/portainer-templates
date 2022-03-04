@@ -257,6 +257,29 @@
       ]
     },
     {
+      "type": 3,
+      "title": "Dokku",
+      "description": "Dokku PaaS (stack)",
+      "categories": ["paas"],
+      "platform": "linux",
+      "logo": "https://cdn.jsdelivr.net/gh/dokku/dokku@v0.26.8/docs/assets/dokku.png",
+      "repository": {
+        "url": "https://github.com/portainer/templates",
+        "stackfile": "stacks/dokku/docker-stack.yml"
+      },
+      "env": [
+        {
+          "name": "DOKKU_HOSTNAME",
+          "label": "Dokku hostname"
+        },
+        {
+          "name": "DOKKU_HOST_ROOT",
+          "label": "Dokku host root",
+          "default": "/var/lib/dokku/home/dokku"
+        }
+      ]
+    },
+    {
       "type": 1,
       "title": "Minio",
       "description": "A distributed object storage server built for cloud applications and devops",
